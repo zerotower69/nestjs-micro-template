@@ -34,3 +34,16 @@ function readConfig(filePath: string): Record<string, any> {
   cacheConfig = yaml.load(readFileSync(filePath, { encoding: 'utf8' }));
   return cacheConfig;
 }
+
+export function getSequelizeConfig(alter: boolean): Record<string, any> {
+  const sqlConfig = getConfig('mysql');
+  const sequelizeConfig = getConfig('sequelize');
+  return {
+    ...sqlConfig,
+    ...sequelizeConfig,
+    sync: {
+      alter: alter,
+    },
+    dialect: getConfig('settings.dialect'),
+  };
+}

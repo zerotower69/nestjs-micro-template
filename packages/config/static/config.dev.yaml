@@ -1,16 +1,48 @@
 mysql:
   host: "127.0.0.1"
-  port: "3306"
+  port: 3306
   main: true
+  username: "root"
+  password: "12345678"
+  database: "vben_admin"
+  timezone: "+08:00"
+  # 连接池配置
+  pool:
+    # 连接池最大连接数
+    max: 5
+    # 连接池最小连接数
+    min: 0
+    # 空闲时长，超过这个时间将被释放
+    idle: 1000
+    # The maximum time, in milliseconds, that pool will try to get connection before throwing error
+    acquire: 0
+    # The time interval, in milliseconds, after which sequelize-pool will remove idle connections.
+#    evict: 3000
+    # The number of times to use a connection before closing and replacing it. Default is Infinity
+#    maxUses: 20
 
+sequelize:
+  # 重试次数
+  retryAttempts: 3
+  # 尝试间隔
+  retryDelay: 4000
+  # 自动加载模型,开发时很有用
+  autoLoadModels: true
+  # 同步模型和数据库
+  synchronize: true
+
+services:
+  gateway:
+    port: 4000
+  system:
+    port: 4001
+    name: "SYSTEM_SERVICE"
+  log:
+    port: 4002
+    name: "LOG_SERVICE"
+  blog:
+    port: 4003
+    name: "AUTH_SERVICE"
 settings:
-  services:
-    gateway:
-      port: 4000
-    system:
-      port: 4001
-    log:
-      port: 4002
-    auth:
-      port: 4003
+  dialect: "mysql"
 

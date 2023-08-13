@@ -39,6 +39,8 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 # config yaml file
+/packages/config/static/config.dev.yaml
+/packages/config/static/config.prod.yaml
 /packages/**/**/config.*.yaml
 # /commons/config/config.development.yaml
 # /commons/config/config.production.yaml

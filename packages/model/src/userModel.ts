@@ -13,7 +13,7 @@ import {
   tableName: 'sys_user',
   timestamps: true,
 })
-export class UserModel extends Model {
+class UserModel extends Model {
   @PrimaryKey
   @AllowNull(false)
   @Comment('id')
@@ -36,3 +36,5 @@ export class UserModel extends Model {
   @Column(DataType.STRING(140))
   password: string;
 }
+
+export { UserModel };

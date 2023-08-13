@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import { getConfig } from '@app/config';
 
 async function bootstrap() {
-  const Config = getConfig('settings.services.system') || {};
+  const Config = getConfig('services.system') || {};
   // console.log(Config);
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
