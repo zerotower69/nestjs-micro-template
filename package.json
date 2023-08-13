@@ -1,11 +1,15 @@
 {
   "name": "nest-server",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "1.0.0",
+  "description": "nestjs microservices with monorepo",
+  "author": "zerotower69",
+  "repository": {
+    "url": "https://github.com/zerotower/nestjs-miscro-template"
+  },
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {},
+  "keywords": ["nestjs","miscroserices","monorepo","pnpm","typescript","zerotower"],
   "dependencies": {
     "@app/config": "workspace:*",
     "@app/models": "workspace:*",
