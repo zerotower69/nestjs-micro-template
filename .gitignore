@@ -44,3 +44,4 @@ packages/config/static/config.dev.yaml
 packages/config/static/config.prod.yaml
 packages/**/tsconfig.build.tsbuildinfo
 packages/**/tsconfig.tsbuildinfo
+packages/**/.rollup.cache

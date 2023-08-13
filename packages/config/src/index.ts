@@ -1,5 +1,5 @@
 import { join } from 'path';
-import yaml = require('js-yaml');
+import yaml from 'js-yaml';
 import { readFileSync } from 'fs';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 import { cloneDeep } from 'lodash';

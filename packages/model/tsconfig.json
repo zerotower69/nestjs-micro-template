@@ -10,5 +10,5 @@
 //    "target": "ESNext"
     "allowUmdGlobalAccess": true,
   },
-  "exclude": ["./dist","webpack.config.ts","vite.config.ts"],
+  "exclude": ["./dist"],
 }
