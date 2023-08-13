@@ -1,8 +1,9 @@
 # compiled output
-/dist
-/**/dist
+dist/*
+packages/**/dist
+/apps/**/dist
+# node_modules
 /node_modules
-/**/node_modules
 /apps/**/node_modules
 /packages/**/node_modules/
 
@@ -39,11 +40,7 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 # config yaml file
-/packages/config/static/config.dev.yaml
-/packages/config/static/config.prod.yaml
-/packages/**/**/config.*.yaml
-# /commons/config/config.development.yaml
-# /commons/config/config.production.yaml
-/packages/**/tsconfig.build.tsbuildinfo
-/packages/**/tsconfig.tsbuildinfo
-/apps/gateway/node_modules/consola/
+packages/config/static/config.dev.yaml
+packages/config/static/config.prod.yaml
+packages/**/tsconfig.build.tsbuildinfo
+packages/**/tsconfig.tsbuildinfo
