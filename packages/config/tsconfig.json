@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "declaration": true, //允许输出类型文件
+    "esModuleInterop": false,
+//    "target": "ESNext"
+  },
+  "exclude": ["./dist","webpack.config.ts","vite.config.ts"]
+}

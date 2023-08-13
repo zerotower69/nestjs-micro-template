@@ -1,0 +1,24 @@
+{
+  "name": "@app/config",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "build:watch": "vite build --watch && tsc --emitDeclarationOnly",
+    "start:dev": "pnpm run build:watch",
+    "clear": "rimraf node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^20.4.10",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.3"
+  }
+}
