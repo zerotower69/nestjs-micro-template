@@ -6,7 +6,7 @@ import { cloneDeep } from 'lodash';
 
 //缓存配置,配置全局只需要读取一遍！
 let cacheConfig: null | Record<string, any> = null;
-export function getConfig(path?: string) {
+export function getConfig(path?: string): any {
   const mode = process.env.RUNNING_ENV || 'dev';
   const configFileName = `config.${mode}.yaml`;
   const config = cacheConfig ? cacheConfig : readConfig(configFileName);
