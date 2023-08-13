@@ -3,12 +3,16 @@ import yaml = require('js-yaml');
 import { readFileSync } from 'fs';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 import { cloneDeep } from 'lodash';
-export function getConfig(mode: string, path?: string) {
+
+//缓存配置,配置全局只需要读取一遍！
+let cacheConfig: null | Record<string, any> = null;
+export function getConfig(path?: string) {
+  const mode = process.env.RUNNING_ENV || 'dev';
   const configFileName = `config.${mode}.yaml`;
-  const config = readConfig(configFileName);
+  const config = cacheConfig ? cacheConfig : readConfig(configFileName);
   let res = cloneDeep(config);
   if (typeof path === 'string') {
-    const paths = path.split(path);
+    const paths = path.split('.');
     for (const p of paths) {
       if (/\[\d]/.test(p)) {
         const index = parseInt(p[1]);
@@ -27,5 +31,6 @@ function isObj(obj: any) {
 
 function readConfig(filePath: string): Record<string, any> {
   filePath = join(__dirname, filePath);
-  return yaml.load(readFileSync(filePath, { encoding: 'utf8' }));
+  cacheConfig = yaml.load(readFileSync(filePath, { encoding: 'utf8' }));
+  return cacheConfig;
 }

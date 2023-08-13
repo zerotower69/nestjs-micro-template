@@ -1,0 +1,16 @@
+mysql:
+  host: "127.0.0.1"
+  port: "3306"
+  main: true
+
+settings:
+  services:
+    gateway:
+      port: 4000
+    system:
+      port: 4001
+    log:
+      port: 4002
+    auth:
+      port: 4003
+
