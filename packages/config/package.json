@@ -4,8 +4,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly",
-    "build:watch": "vite build --watch && tsc --emitDeclarationOnly",
+    "build": "rollup --config rollup.config.mjs",
+    "build:watch": "rollup --config rollup.config.mjs --watch",
     "start:dev": "pnpm run build:watch",
     "clear": "rimraf node_modules"
   },
