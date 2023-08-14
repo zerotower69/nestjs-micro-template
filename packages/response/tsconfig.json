@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "declaration": true, //允许输出类型文件
+    "esModuleInterop": false,
+    "removeComments": true,
+//    "target": "ESNext"
+    "allowUmdGlobalAccess": true,
+  },
+  "exclude": ["./dist"],
+}
