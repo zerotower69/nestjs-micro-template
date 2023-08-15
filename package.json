@@ -9,7 +9,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:packages": "pnpm -C ./packages/config build & pnpm -C ./packages/model build & pnpm -C ./packages/response build",
+    "build:app":"pnpm -C ./ build:packages & pnpm -C "
   },
   "keywords": [
     "nestjs",
